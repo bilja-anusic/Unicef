@@ -1,3 +1,6 @@
+const {faker} = require("@faker-js/faker")
+
+
 class RegisterCompanyPage{
     get imeOrganizacijeInput(){
         return cy.get('#organization-name')
@@ -63,11 +66,13 @@ class RegisterCompanyPage{
         return cy.get('#legal-representative-email')
     }
 
-    registracijaKompanije (text, email, phoneNumber, url) {
+
+
+    registracijaKompanije (text, email, number, url) {
         this.imeOrganizacijeInput.type(text)
         this.adresaOrganizacijeInput.type(text)
-        this.emailOrganizacijeInput.type(email)
-        this.brojTelefonaOrganizacijeInput.type(phoneNumber)
+        this.emailOrganizacijeInput.type(faker.internet.email())
+        this.brojTelefonaOrganizacijeInput.type(faker.phone.number('+381########'))
         this.kontaktOsobaInput.type(text)
         this.webStranicaOrganizacijeButton.click()
         this.webStranicaOrganizacijeInput.type(url)
@@ -75,11 +80,11 @@ class RegisterCompanyPage{
         this.facebookStranicaOrganizacijeInput.type(url)
         this.instagramStranicaOrganizacijeButton.click()
         this.instagramStranicaOrganizacijeInput.type(url)
-        this.brojTelefonaKontaktOsobeInput.type(phoneNumber)
-        this.emailKontaktOsobeInput.type(email)
+        this.brojTelefonaKontaktOsobeInput.type(faker.phone.number('+381########'))
+        this.emailKontaktOsobeInput.type(faker.internet.email())
         this.zakonskiPredstavnikInput.type(text)
-        this.brojTelefonaZakonskogPredstavnikaInput.type(phoneNumber)
-        this.emailZakonskogPredstavnikaInput.type(email)
+        this.brojTelefonaZakonskogPredstavnikaInput.type(faker.phone.number('+381########'))
+        this.emailZakonskogPredstavnikaInput.type(faker.internet.email())
 
     }
 
