@@ -8,7 +8,7 @@ import { registerCompanyPage2 } from "../pageObjects/register-company2";
 describe('Register tests', ()=>{
 
     beforeEach(()=>{
-        cy.visit('https://biljana-home/registracija-kompanije/')
+        cy.visit('registracija-organizacije')
     })
 
     it ("Register with valid credentials",() => {

@@ -7,7 +7,7 @@ import { registerVolonter } from "../pageObjects/register-volonter";
 describe('Register tests', ()=>{
 
     beforeEach(()=>{
-        cy.visit('https://biljana-home/registracija-volonteri/')
+        cy.visit('registracija-volontera')
     })
 
     it ("Register with valid credentials",() => {
